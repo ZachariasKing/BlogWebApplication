@@ -1,0 +1,28 @@
+{
+  "name": "blogwebapplication",
+  "version": "1.0.0",
+  "description": "blog web app developed using Node, Express and EJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZachariasKing/BlogWebApplication.git"
+  },
+  "keywords": [
+    "blog",
+    "web",
+    "app"
+  ],
+  "author": "Zacharias King",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZachariasKing/BlogWebApplication/issues"
+  },
+  "homepage": "https://github.com/ZachariasKing/BlogWebApplication#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0"
+  }
+}
