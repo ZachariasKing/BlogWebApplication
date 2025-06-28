@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* Color Variables */
+:root {
+  --teal: #0e7c7bff;
+  --verdigris: #17bebbff;
+  --nyanza: #d4f4ddff;
+  --rusty-red: #d62246ff;
+  --violet-jtc: #4b1d3fff;
+  --meadow-green: #7ebc59ff;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--nyanza);
+}
+
+/* Header Styling */
+
+/* Nav Styling */
+#svg-logo {
+  width: 50px;
+  height: 50px;
+}
+
+nav {
+  background-color: var(--teal);
+  padding: 10px;
+}
+
+#main-navigation ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-evenly;
+}
+
+#main-navigation a {
+  color: var(--nyanza);
+  text-decoration: none;
+  padding: 10px 15px;
+}
+
+/* Aside blog category filtering navigation */
+#blog-category-nav {
+  background-color: var(--verdigris);
+  padding: 10px;
+  margin: 20px;
+}
+
+/* Main blog content styling */
+#main-heading {
+  text-align: center;
+  margin-top: 20px;
+  display: inline-block;
+}
+
+#blog-content {
+  margin: 20px;
+  width: 75%;
+  padding: 20px;
+  background-color: var(--nyanza);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#container {
+  display: grid;
+  column-gap: 50px;
+  padding: 10px;
+  box-sizing: border-box;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.blog-post-image {
+  border-radius: 10px;
+  width: 250px;
+  height: 150px;
+}
+
+/* Add blog post button styling */
+#add-post-button {
+  background-color: var(--meadow-green);
+  color: var(--nyanza);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+}
+
+/* Add blog post modal styling*/
+#addPostModal {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  clear: both;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: var(--nyanza);
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 10px;
+  width: 80%;
+}
+
+/* The Close Button */
+#close-modal {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.hide-modal {
+  display: none; /* Hide the modal by default */
+}
+
+/* Add blog post form styling */
+#addPostForm {
+  display: flex;
+  flex-direction: column;
+}
+
+#addPostForm label {
+  margin-bottom: 5px;
+}
+
+#addPostForm input[type="text"],
+#addPostForm input[type="file"] {
+  margin-bottom: 15px;
+  padding: 15px;
+}
+
+#addPostForm textarea {
+  margin-bottom: 15px;
+  height: 100px;
+  padding: 5px;
+}
+
+#addPostForm input[type="submit"] {
+  background-color: var(--meadow-green);
+  color: var(--nyanza);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100px;
+  align-self: center;
+}
+
+/* Footer Styling */
+footer {
+  background-color: var(--teal);
+  color: var(--nyanza);
+  text-align: center;
+  padding: 20px 0;
+  clear: both;
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+/* Media Queries */
+
+@media (min-width: 600px) {
+  #container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  #add-post-button {
+    float: right;
+    margin-top: 20px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  #blog-category-nav {
+    float: left;
+    width: 15%;
+  }
+
+  #blog-content {
+    float: left;
+  }
+
+  #container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  #container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* TODO: When large device then aside category menu flexbox layout similar to Nav */

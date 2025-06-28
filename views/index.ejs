@@ -1,0 +1,50 @@
+<%- include('partials/header.ejs') %>
+<nav id="blog-category-nav">
+  <h3>Blog Categories</h3>
+  <ul>
+    <li><a href="/category/tech">Tech</a></li>
+    <li><a href="/category/lifestyle">Lifestyle</a></li>
+    <li><a href="/category/health">Health</a></li>
+  </ul>
+</nav>
+
+<main id="blog-content">
+  <h1 id="main-heading">Welcome to My Blog</h1>
+  <button id="add-post-button">Add New Post +</button>
+  <p>
+    Explore my latest posts on various topics including tech, lifestyle, and
+    health.
+  </p>
+  <section id="blog-posts">
+    <h2>Recent Posts</h2>
+    <div id="container">
+      <% if(locals.blogPosts) { %> <% locals.blogPosts.forEach(post => { %>
+      <div class="blog-post">
+        <img class="blog-post-image" src="<%= "/images/" + post.imageName %>" alt="">
+        <h3><a href="/blog/<%= post.id %>"><%= post.title %></a></h3>
+        <p><%= post.content %></p>
+        <p class="post-date">
+          Posted on: <%= new Date(post.date).toLocaleDateString() %>
+        </p>
+      </div>
+      <% }); } %>
+    </div>
+  </section>
+</main>
+
+
+
+<!-- Add post modal -->
+<div id="addPostModal" class="modal hide-modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span id="close-modal">&times;</span>
+    <%- include('partials/addBlogPostForm.ejs') %>
+  </div>
+
+</div>
+
+
+
+<%- include('partials/footer.ejs') %>
