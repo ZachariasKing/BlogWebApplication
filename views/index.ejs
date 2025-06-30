@@ -10,7 +10,7 @@
 
 <main id="blog-content">
   <h1 id="main-heading">Welcome to My Blog</h1>
-  <button id="add-post-button">Add New Post +</button>
+  <button class="crud-button" id="add-post-button">Add New Post +</button>
   <p>
     Explore my latest posts on various topics including tech, lifestyle, and
     health.
@@ -22,10 +22,11 @@
       <div class="blog-post">
         <img class="blog-post-image" src="<%= "/images/" + post.imageName %>" alt="">
         <h3><a href="/blog/<%= post.id %>"><%= post.title %></a></h3>
-        <p><%= post.content %></p>
+        <p><%= post.content.slice(0,100) + '...' %></p>
         <p class="post-date">
           Posted on: <%= new Date(post.date).toLocaleDateString() %>
         </p>
+        <p>Author: <%= post.author %></p>
       </div>
       <% }); } %>
     </div>

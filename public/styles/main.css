@@ -1,9 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
+/* TODO: aside category menu needs to have same height as the blog post content container  */
+
 /* Color Variables */
 :root {
   --teal: #0e7c7bff;
   --verdigris: #17bebbff;
+  --verdigris-light: rgba(23, 190, 187, 0.35);
   --nyanza: #d4f4ddff;
   --rusty-red: #d62246ff;
   --violet-jtc: #4b1d3fff;
@@ -44,9 +47,11 @@ nav {
 
 /* Aside blog category filtering navigation */
 #blog-category-nav {
-  background-color: var(--verdigris);
   padding: 10px;
   margin: 20px;
+  background-color: var(--verdigris-light);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Main blog content styling */
@@ -163,6 +168,56 @@ nav {
   align-self: center;
 }
 
+/* Blog post details screen styling */
+
+#blog-post-details-title,
+#blog-post-details-author,
+#blog-post-details-date {
+  text-align: center;
+}
+
+#blog-post-details-title {
+  font-size: 2em;
+}
+
+#blog-post-details-content {
+  margin: auto;
+  padding: 20px;
+}
+
+.blog-post-details {
+}
+
+.blog-post-image-details {
+  width: 100%;
+  height: auto;
+}
+
+.crud-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  margin: 20px;
+}
+
+ #update-post-button {
+  background-color: var(--verdigris);
+  color: var(--nyanza);
+}
+
+#delete-post-button {
+  background-color: var(--rusty-red);
+  color: var(--nyanza);
+} 
+
+#flex-container-buttons {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
 /* Footer Styling */
 footer {
   background-color: var(--teal);
@@ -186,19 +241,35 @@ footer p {
     float: right;
     margin-top: 20px;
   }
+  #blog-content {
+    margin: 20px auto;
+  }
 }
 
 @media only screen and (min-width: 768px) {
   #container {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .blog-post-image-details {
+    float: left;
+    margin: 10px;
+    width: 30%;
+    height: auto;
+  }
+
+  #flex-container-buttons {
+  justify-content: end;
+}
+
+
+
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
   #blog-category-nav {
     float: left;
-    width: 15%;
   }
 
   #blog-content {
@@ -208,6 +279,9 @@ footer p {
   #container {
     grid-template-columns: repeat(2, 1fr);
   }
+  #blog-category-nav {
+    height: 100vh;
+  }
 }
 
 @media only screen and (min-width: 1200px) {
@@ -216,4 +290,5 @@ footer p {
   }
 }
 
-/* TODO: When large device then aside category menu flexbox layout similar to Nav */
+@media only screen and (min-width: 1400px) {
+}

@@ -1,0 +1,25 @@
+<%- include('partials/header.ejs') %>
+
+<section id="blog-post-details">
+  <div id="details-container">
+    <% if (locals.blogPostForView) { %>
+    <h1 id="blog-post-details-title"><%= blogPostForView.title %></h1>
+    <p id="blog-post-details-author">Author: <%= blogPostForView.author %></p>
+
+    <div class="blog-post-details">
+      <img class="blog-post-image-details" src="<%= "/images/" +
+      blogPostForView.imageName %>" alt="">
+      <p id="blog-post-details-content"><%= blogPostForView.content %></p>
+      <p id="blog-post-details-date">
+        Posted on: <%= new Date(blogPostForView.date).toLocaleDateString() %>
+      </p>
+    </div>
+  </div>
+  <div id="flex-container-buttons">
+    <button class="crud-button" id="update-post-button">Update Post</button>
+    <button class="crud-button" id="delete-post-button">Delete Post</button>
+  </div>
+  <% } %>
+</section>
+
+<%- include('partials/footer.ejs') %>
