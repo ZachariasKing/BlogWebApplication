@@ -16,8 +16,8 @@
     </div>
   </div>
   <div id="flex-container-buttons">
-    <button class="crud-button" id="update-post-button">Update Post</button>
-    <button class="crud-button" id="delete-post-button">Delete Post</button>
+    <button class="crud-button" id="update-post-button" data-post-id="<%= blogPostForView.id %>">Update Post</button>
+    <button type="button" class="crud-button" id="delete-post-button" data-post-id="<%= blogPostForView.id %>">Delete Post</button>
   </div>
   <% } %>
 </section>
